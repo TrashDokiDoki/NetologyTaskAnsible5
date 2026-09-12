@@ -60,3 +60,11 @@
 2. Вывод после введения команды `molecule test`
 
 <img width="856" height="491" alt="image" src="https://github.com/user-attachments/assets/476ed783-e1ed-4f16-bbb1-3aac7a9ec96c" />
+
+3. Вывод после команды `tox` внутри контейнера до внесения изменений в `tox.ini`
+
+<img width="1512" height="546" alt="image" src="https://github.com/user-attachments/assets/682077a4-fdd1-47a1-9996-93a6834ae64e" />
+
+4. Вывод команды `tox` во время тестирования роли Vector в четырёх окружениях
+
+<img width="1498" height="663" alt="image" src="https://github.com/user-attachments/assets/ba8df6bc-21a1-4f97-886d-a5fd7b1ec304" />
