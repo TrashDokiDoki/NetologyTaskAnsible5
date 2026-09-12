@@ -51,7 +51,72 @@
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
 
+---
+
 ### Решение
+
+## Molecule
+
+Для роли Vector создан сценарий Molecule.
+
+Тестирование выполняется на двух дистрибутивах:
+
+- Ubuntu latest
+- Oracle Linux 8
+
+В `verify.yml` добавлены проверки:
+
+- работоспособности бинарного файла Vector;
+- валидности конфигурации Vector;
+- успешного запуска Vector;
+- наличия файла конфигурации.
+
+Тестирование Molecule прошло успешно.
+
+Тег решения Molecule:
+
+`1.1.0`
+
+---
+
+## Tox
+
+Для тестирования совместимости создан дополнительный облегчённый
+сценарий Molecule:
+
+`molecule/compatibility`
+
+Сценарий использует драйвер Podman.
+
+В `tox.ini` настроен запуск:
+
+```ini
+commands =
+    {posargs:molecule test -s compatibility --destroy always}
+```
+
+Тестирование выполнено в следующих окружениях:
+
+* Python 3.7 + Ansible 2.10
+* Python 3.7 + Ansible 3.0
+* Python 3.9 + Ansible 2.10
+* Python 3.9 + Ansible 3.0
+
+Все окружения успешно прошли тестирование:
+
+* py37-ansible210: commands succeeded
+* py37-ansible30: commands succeeded
+* py39-ansible210: commands succeeded
+* py39-ansible30: commands succeeded
+congratulations :)
+
+Тег решения Tox:
+
+`1.2.0`
+
+---
+
+### Скрины
 
 1. Converge прошёл на обоих дистрибутивах
 
@@ -65,6 +130,6 @@
 
 <img width="1512" height="546" alt="image" src="https://github.com/user-attachments/assets/682077a4-fdd1-47a1-9996-93a6834ae64e" />
 
-4. Вывод команды `tox` во время тестирования роли Vector в четырёх окружениях
+4. Успешный запуск Tox-тестирования роли Vector в четырёх окружениях: Python 3.7/3.9 с Ansible 2.10 и 3.0. Все тестовые окружения завершились успешно.
 
 <img width="1498" height="663" alt="image" src="https://github.com/user-attachments/assets/ba8df6bc-21a1-4f97-886d-a5fd7b1ec304" />
